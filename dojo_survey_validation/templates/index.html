@@ -1,0 +1,57 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <title>Dojo Survey with Validation</title>
+     <!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheet.css') }}"> -->
+
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+ </head>
+ <body>
+    <div class="container">
+        <div><h1></h1></div>
+        <h1>Dojo Survey with Validation</h1> 
+
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <p>{{message}}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+    <form action = '/result' method='post'>
+        <div class="form-group">
+            <div class='form-group'>Your Name: <input type='text' name='name' class='form-control' 
+            value= "{{ session['name'] }}"></div>
+            <div class='form-group'>Your Email: <input type='email' name='email' class='form-control' value="{{ session['email'] }}"></div>
+            <div class='form-group'>Your Location: <select name='location' class='form-control'>
+                <option value='burbank'>Burbank</option>
+                <option value='san_francisco'>San Francisco</option>
+                <option value='seattle'>Seattle</option>
+                <option value='chicago'>Chicago</option>
+            </select></div>
+
+            <div class='form-group'>Favorite Language:<select name = 'fav_language' class='form-control'>
+                <option value='javascript'>Javascript</option>
+                <option value='python'>Python</option>
+                <option value='java'>Java</option>
+            </select></div>
+
+            <div class='form-group'>Comment (optional): <input type='text-area' name='comment' 
+                value = "{{ session['comment'] }} " class='form-control'>
+               
+            </div>
+
+            <div><input type = "submit" name="submit" class='btn btn-primary'></div>
+    
+        </div>
+    
+    </form>
+
+    </div>
+ </body>
+ </html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dojo Survey Results</title>
+</head>
+<body>
+    <h1>Dojo Survey Results</h1>
+
+    <p>Name: {{ request.form['name'] }} </p>
+    <p>Email: {{ request.form['email'] }} </p>
+    <p>Location: {{ request.form['location'] }} </p>
+    <p>Favorite Language: {{ request.form['fav_language'] }} </p>
+
+    <p>Comment: {{ request.form['comment'] }}
+    </p>
+
+    <form action='/'>
+    <input type="submit" value="Go Back">
+    </form>
+
+</body>
+</html>

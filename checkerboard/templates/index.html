@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Checkerboard</title>
+
+    <style>
+    
+        .red {
+            background-color: red;
+            width: 50px;
+            height: 50px;
+            display: inline-block;
+        }
+    
+        .black {
+            background-color: black;
+            width: 50px;
+            height: 50px;
+            display: inline-block;
+        }
+
+        .row {
+            display: block;
+        }
+    
+    
+    </style>
+
+
+</head>
+<body>
+    <div id="container">
+
+
+            {% for i in range(y) %}
+                {% if i % 2 == 0: %}
+                <div class="row">
+                    {% for j in range(x) %}
+                        {% if j % 2 ==0: %}
+                            <div class="red"></div>
+                        
+
+                        {% elif j % 2 != 0 %}
+                            <div class="black"></div> 
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+                </div>
+
+                {% if i % 2 != 0 %}
+                    <div class="row">
+                        {% for j in range(x) %}
+                            {% if j % 2 == 0 %}
+                            <div class="black"></div>
+
+                            {% elif j % 2 !=0 %}
+                                <div class="red"></div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                {% endif %}
+                
+            {% endfor %}
+
+
+
+
+    </div>
+    
+</body>
+</html>

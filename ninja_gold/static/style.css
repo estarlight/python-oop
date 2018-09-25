@@ -1,0 +1,11 @@
+.box {
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    border: 1px solid black;
+    display: inline-block;
+}
+
+.container {
+    padding: 20px;
+}

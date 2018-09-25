@@ -1,0 +1,49 @@
+<head>
+        <style>
+        body {
+            background-color: white;
+        }
+    
+        .container {
+            margin: auto;
+        }
+    
+        h1 {
+            color: maroon;
+            margin-top: 40px;
+            text-align: center;
+        } 
+    
+        .blue {
+            background-color: {{ boxcolor }};
+            min-width: 300px;
+            min-height: 300px;
+            display: inline-block;
+            margin: 30px;
+        }
+    
+        #box {
+            text-align: center;
+        }
+        </style>
+        </head>
+    
+        
+    
+        <body>
+            <div class="container"> 
+            <h1>Welcome</h1>
+            
+            <div id="box">
+
+            {% for i in range(num): %}
+                <div class = "blue"></div>
+            {% endfor %}
+    
+
+            </div>
+    
+            </div>
+    
+    
+        </body>
